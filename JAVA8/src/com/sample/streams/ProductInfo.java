@@ -1,6 +1,6 @@
 package com.sample.streams;
 
-public class ProductInfo {
+public class ProductInfo  {
 	
 	private String name;
 	private String upc;

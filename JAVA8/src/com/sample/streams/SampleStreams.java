@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class SampleStreams {
+public class SampleStreams  {
 	
 	// A new java.util.stream has been added in Java 8 to perform 
 	// filter/map/reduce like operations with the collection. 
