@@ -1,9 +1,16 @@
 package com.sample.forEach;
 
 import java.util.ArrayList;
+
 import java.util.Iterator;
 import java.util.List;
 
+
+/* forEach() method in Iterable interface  which takes Implementation  of Consumer 
+     interface as an argument
+    The number of lines might increase but forEach method helps in having the 
+    logic for iteration and business logic at separate place resulting in 
+    higher separation of concern and cleaner code. */
 public class ForEachLoop {
 	
 	

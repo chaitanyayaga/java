@@ -4,9 +4,11 @@ public class MyClass implements MyInterface, MyInterface1{
 
 	public static void main(String[] args) {
 		
-		//MyInterface.add(10, 20);
+		//MyInterface.add(10, 20); need to access statis methods using interface 
 
 		MyClass myClass = new MyClass();
+		
+		// myClass.add(10,20) ; not visible
 		
 		String message = myClass.sayHello("Chaitanya");
 		
