@@ -1,0 +1,41 @@
+https://www.journaldev.com/2389/java-8-features-with-examples
+
+# For each
+
+As of Java 8 Static and default  methods are allowed in interfaces and forEach is also defined in Iterable interface 
+If you read forEach method details carefully, you will notice that it’s defined in Iterable interface 
+but we know that interfaces can’t have a method body.
+ From Java 8, interfaces are enhanced to have a method with implementation.
+ We can use default and static keyword to create interfaces with method implementation. 
+forEach method implementation in Iterable interface is:
+ We know that Java doesn’t provide multiple inheritance in Classes because it leads to Diamond Problem.
+So how it will be handled with interfaces now since interfaces are now similar to abstract classes?
+The solution is that compiler will throw an exception in this scenario and we will have to 
+provide implementation logic in the class implementing the interfaces
+============================================================
+default void forEach(Consumer<? super T> action) {
+    Objects.requireNonNull(action);
+    for (T t : this) {
+        action.accept(t);
+    }
+}
+=============================================================
+
+One of the major reason for introducing default methods in interfaces is to enhance the Collections API in 
+Java 8 to support lambda expressions.
+
+If any class in the hierarchy has a method with same signature, 
+then default methods become irrelevant. A default method cannot override a method from java.lang.Object. 
+The reasoning is very simple, it’s because Object is the base class for all the java classes. 
+So even if we have Object class methods defined as default methods in interfaces, 
+it will be useless because Object class method will always be used. That’s why to avoid confusion, 
+we can’t have default methods that are overriding Object class methods.
+
+
+Static methods in interfaces are similar to default methods only difference is you cannot override static methods 
+in the implenetation classes compiler will throw error if you add @override annotation
+
+We can’t define interface static method for Object class methods, 
+we will get compiler error as “This static method cannot hide the instance method from Object”. 
+This is because it’s not allowed in java, since Object is the base class for all the classes and 
+we can’t have one class level static method and another instance method with same signature.
